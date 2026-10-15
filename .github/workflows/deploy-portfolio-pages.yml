@@ -1,0 +1,63 @@
+name: Publish portfolio and redesign preview
+
+on:
+  push:
+    branches:
+      - main
+      - redesign/consistent-case-studies
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out production main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: production
+
+      - name: Check out redesign preview
+        uses: actions/checkout@v4
+        with:
+          ref: redesign/consistent-case-studies
+          path: redesign
+
+      - name: Build production root and isolated preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site/preview
+          cp -a production/. _site/
+          rm -rf _site/.git _site/.github _site/preview
+          mkdir -p _site/preview
+          cp -a redesign/. _site/preview/
+          rm -rf _site/preview/.git _site/preview/.github
+          touch _site/.nojekyll
+          test -f _site/index.html
+          test -f _site/preview/index.html
+          test -f _site/preview/assets/css/case-study-unified.css
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload combined site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
