@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kimseng Ng — UI/UX &amp; Visual Design Portfolio</title>
-  <meta name="description" content="Portfolio of Kimseng Ng: UI/UX design, visual design, and animation for education, government, and financial services. Based in Aotearoa New Zealand.">
+  <title>Kimseng Ng — UX/UI &amp; Visual Design Portfolio</title>
+  <meta name="description" content="Portfolio of Kimseng Ng: UX/UI design, visual design, and animation for education, government, and financial services. Based in Aotearoa New Zealand.">
   <meta name="theme-color" content="#ffffff">
 
   <link href="assets/img/favicon.png" rel="icon">
@@ -18,7 +18,7 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/portfolio-redesign.css?v=2" rel="stylesheet">
+  <link href="assets/css/portfolio-redesign.css?v=4" rel="stylesheet">
 </head>
 
 <body>
@@ -59,13 +59,21 @@
   <main id="main">
     <section class="section site-portfolio feed-page" aria-labelledby="portfolio-heading">
       <div class="container-fluid container-feed px-3 px-lg-4">
-        <header class="feed-hero">
-          <h1 id="portfolio-heading" class="feed-hero__title">Kia ora, I'm Kimseng</h1>
-          <p class="feed-hero__bio">UI/UX designer, art director, and artist. I design clear, inclusive experiences for complex domains.</p>
+        <header class="feed-hero feed-hero--editorial">
+          <div class="feed-hero__layout">
+            <div class="feed-hero__intro">
+              <p class="feed-hero__eyebrow"><span class="feed-hero__dot" aria-hidden="true"></span> Senior UX/UI &amp; Product Designer · Wellington, NZ</p>
+              <h1 id="portfolio-heading" class="feed-hero__title">Making the <em>complex</em> feel simple.</h1>
+              <p class="feed-hero__bio">Kia ora, I'm Kimseng. I design thoughtful, accessible digital experiences that help people get things done — especially when the problem is anything but simple.</p>
+              <div class="feed-hero__actions"><a class="feed-hero__primary" href="#portfolio-grid">Explore selected work <span aria-hidden="true">↘</span></a><a class="feed-hero__secondary" href="about.html">A little about me <span aria-hidden="true">↗</span></a></div>
+            </div>
+            <aside class="feed-hero__aside" aria-label="My approach"><span class="feed-hero__aside-label">WHAT I BRING TO THE TABLE</span><p>Research-led thinking.<br>Clear interaction design.<br>Practical delivery.</p><span class="feed-hero__aside-foot">15+ years across product, UX/UI and visual design</span></aside>
+          </div>
+          <div class="feed-hero__work-header"><div><span class="feed-hero__section-label">THE WORK</span><h2>Selected projects<span class="feed-hero__asterisk" aria-hidden="true"> ✳</span></h2></div><p>A mix of product design, visual thinking and motion.</p></div>
           <fieldset id="filters" class="filters feed-filters border-0 m-0 p-0">
             <legend class="visually-hidden">Filter projects by type</legend>
             <button type="button" class="filter-btn active" data-filter="*" aria-pressed="true">All</button>
-            <button type="button" class="filter-btn" data-filter=".web" aria-pressed="false">UI/UX</button>
+            <button type="button" class="filter-btn" data-filter=".web" aria-pressed="false">UX/UI</button>
             <button type="button" class="filter-btn" data-filter=".design" aria-pressed="false">Visual design</button>
             <button type="button" class="filter-btn" data-filter=".branding" aria-pressed="false">Animation</button>
           </fieldset>
@@ -74,16 +82,34 @@
         <div id="portfolio-grid" class="row g-3 g-md-4 feed-grid">
           <div class="item web shot-tile col-6 col-md-4 col-lg-3">
             <article class="shot-card">
+              <a href="totara_skills.html" class="item-wrap shot-card__link">
+                <div class="shot-card__media">
+                  <img class="img-fluid" src="assets/img/skills_cover.png" alt="Totara Skills interface showing team critical-skill proficiency and a side panel of people." width="800" height="600" loading="lazy" decoding="async">
+                  <div class="shot-card__hover" aria-hidden="true">
+                    <span class="shot-card__hover-title">Totara Skills</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
+                  </div>
+                </div>
+                <div class="shot-card__meta work-info">
+                  <h3 class="shot-card__title">Totara Skills</h3>
+                  <span class="shot-card__badge">UX/UI</span>
+                </div>
+              </a>
+            </article>
+          </div>
+          <div class="item web shot-tile col-6 col-md-4 col-lg-3">
+            <article class="shot-card">
               <a href="programmes_certs.html" class="item-wrap shot-card__link">
                 <div class="shot-card__media">
                   <img class="img-fluid" src="assets/img/program_cert.png" alt="Screens from the programmes and certifications experience showing course structure and learner progress." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Programmes and certifications</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
                   <h3 class="shot-card__title">Programmes and certifications</h3>
-                  <span class="shot-card__badge">UI/UX</span>
+                  <span class="shot-card__badge">UX/UI</span>
                 </div>
               </a>
             </article>
@@ -95,11 +121,12 @@
                   <img class="img-fluid" src="assets/img/objectives.png" alt="Totara Goals interface for setting and tracking workplace objectives." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Totara Goals</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
                   <h3 class="shot-card__title">Totara Goals</h3>
-                  <span class="shot-card__badge">UI/UX</span>
+                  <span class="shot-card__badge">UX/UI</span>
                 </div>
               </a>
             </article>
@@ -111,11 +138,12 @@
                   <img class="img-fluid" src="assets/img/subs_portal.png" alt="Subscription management portal with account overview and billing controls." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Subscription portal</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
                   <h3 class="shot-card__title">Subscription portal</h3>
-                  <span class="shot-card__badge">UI/UX</span>
+                  <span class="shot-card__badge">UX/UI</span>
                 </div>
               </a>
             </article>
@@ -127,11 +155,12 @@
                   <img class="img-fluid" src="assets/img/po.png" alt="Performance overview dashboard summarising employee goals and reviews." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Performance overview</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
                   <h3 class="shot-card__title">Performance overview</h3>
-                  <span class="shot-card__badge">UI/UX</span>
+                  <span class="shot-card__badge">UX/UI</span>
                 </div>
               </a>
             </article>
@@ -143,11 +172,12 @@
                   <img class="img-fluid" src="assets/img/filter_bar.png" alt="Reusable filter bar component with category chips and clear affordances." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Filter bar component</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
                   <h3 class="shot-card__title">Filter bar component</h3>
-                  <span class="shot-card__badge">UI/UX</span>
+                  <span class="shot-card__badge">UX/UI</span>
                 </div>
               </a>
             </article>
@@ -156,14 +186,15 @@
             <article class="shot-card">
               <a href="pa.html" class="item-wrap shot-card__link">
                 <div class="shot-card__media">
-                  <img class="img-fluid" src="assets/img/filter_bar.png" alt="Admin experience for configuring performance activities and workflows." width="800" height="600" loading="lazy" decoding="async">
+                  <img class="img-fluid" src="assets/img/pa.png" alt="Admin experience for configuring performance activities and workflows." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
-                    <span class="shot-card__hover-title">Performance activities admin</span>
+                    <span class="shot-card__hover-title">Performance activities admin experience</span>
+                    <span class="shot-card__hover-type">UX/UI</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
-                  <h3 class="shot-card__title">Performance activities admin</h3>
-                  <span class="shot-card__badge">UI/UX</span>
+                  <h3 class="shot-card__title">Performance activities admin experience</h3>
+                  <span class="shot-card__badge">UX/UI</span>
                 </div>
               </a>
             </article>
@@ -175,6 +206,7 @@
                   <img class="img-fluid" src="assets/img/optus.png" alt="Retail onboarding e-learning screens for Optus with bold brand visuals." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Optus retail onboarding modules</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -191,6 +223,7 @@
                   <img class="img-fluid" src="assets/img/anz_portal.png" alt="ANZ business banker learning portal with structured modules and navigation." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">ANZ learning portal for business bankers</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -207,6 +240,7 @@
                   <img class="img-fluid" src="assets/img/worksafe.png" alt="WorkSafe module screens explaining work-related health concepts." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">WorkSafe work-related health module</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -223,6 +257,7 @@
                   <img class="img-fluid" src="assets/img/moe.png" alt="Ministry of Education Delta toolkit learning visuals and layouts." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">MOE Delta toolkit</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -239,6 +274,7 @@
                   <img class="img-fluid" src="assets/img/mpi.png" alt="MPI learning portal interface with agricultural sector imagery." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">MPI learning portal</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -255,6 +291,7 @@
                   <img class="img-fluid" src="assets/img/linz.png" alt="LINZ wellbeing and safety e-learning module screens." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">LINZ wellbeing and safety module</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -271,6 +308,7 @@
                   <img class="img-fluid" src="assets/img/mbie.png" alt="MBIE guidance module with illustrated scenarios and clear typography." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">MBIE understanding guidance</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -287,6 +325,7 @@
                   <img class="img-fluid" src="assets/img/sensa.png" alt="SENSA drone training programme visuals and instructional layouts." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">SENSA drone flying programme</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -303,6 +342,7 @@
                   <img class="img-fluid" src="assets/img/fol.png" alt="Festival of Lights app UI with event schedule and map concepts." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Festival of Lights mobile app</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -319,6 +359,7 @@
                   <img class="img-fluid" src="assets/img/toromai.png" alt="Massey Te Reo online learning module with cultural design elements." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Massey University Te Reo online module</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -335,6 +376,7 @@
                   <img class="img-fluid" src="assets/img/smokin.png" alt="Smoking cessation module screens with supportive messaging and graphics." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">MOE smoking cessation online module</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -351,6 +393,7 @@
                   <img class="img-fluid" src="assets/img/oranga.png" alt="Oranga Tamariki learning portal with child-centred visual language." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Oranga Tamariki learning portal</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -367,6 +410,7 @@
                   <img class="img-fluid" src="assets/img/nzedu.png" alt="New Zealand Education learning portal course tiles and navigation." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">NZ Education learning portal</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -383,6 +427,7 @@
                   <img class="img-fluid" src="assets/img/anz_induction.png" alt="ANZ business banker induction workshop print and digital materials." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">ANZ business banker induction materials</span>
+                    <span class="shot-card__hover-type">Visual design</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -399,6 +444,7 @@
                   <img class="img-fluid" src="assets/img/tereo.png" alt="Still from Te Reo promotional animation for Massey University." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Massey University Te Reo promotional video</span>
+                    <span class="shot-card__hover-type">Animation</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -415,6 +461,7 @@
                   <img class="img-fluid" src="assets/img/bonus_bond.png" alt="ANZ Bonus Bond motion graphics frame with brand colours." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">ANZ Bonus Bond</span>
+                    <span class="shot-card__hover-type">Animation</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -431,6 +478,7 @@
                   <img class="img-fluid" src="assets/img/mbie_jacking.png" alt="Animated explainer frame showing foundation jacking for earthquake repairs." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">MBIE jacking up a foundation</span>
+                    <span class="shot-card__hover-type">Animation</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">
@@ -447,6 +495,7 @@
                   <img class="img-fluid" src="assets/img/countdown.png" alt="Countdown supermarket induction animation styleframe." width="800" height="600" loading="lazy" decoding="async">
                   <div class="shot-card__hover" aria-hidden="true">
                     <span class="shot-card__hover-title">Countdown induction programme</span>
+                    <span class="shot-card__hover-type">Animation</span>
                   </div>
                 </div>
                 <div class="shot-card__meta work-info">

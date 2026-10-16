@@ -1,0 +1,29 @@
+/* Unified case-study presentation, inspired by Totara Skills.
+   Scoped to case pages only; existing content and image assets are retained. */
+body.case-page{--case-ink:#192a23;--case-green:#21694d;--case-muted:#53635a;--case-pale:#f3f8f3;--case-line:#e1e9e2;font-family:"Plus Jakarta Sans",sans-serif;color:var(--case-ink);background:#fff}
+body.case-page .case-content{overflow:hidden}
+body.case-page .case-content>section{padding:72px 0;margin:0;position:relative}
+body.case-page .case-content>section:first-child{padding:100px 0 86px;background:#f6f9f5}
+body.case-page .case-content>section:nth-child(2n+1):not(:first-child){background:#f5f8f5}
+body.case-page .case-content>section .site-section{padding:0!important;margin:0!important}
+body.case-page .case-content>section .container{max-width:1120px}
+body.case-page .case-content>section:first-child .container{max-width:1120px}
+body.case-page .case-content>section:first-child .row>div:first-child{width:100%;max-width:850px;flex:0 0 100%}
+body.case-page .case-content>section:first-child h2{font-size:clamp(2.7rem,5.6vw,5.6rem);font-weight:800;line-height:1.1;letter-spacing:-.065em;margin:0 0 30px;color:var(--case-ink)}
+body.case-page .case-content>section:first-child h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--case-green);margin:26px 0 18px}
+body.case-page .case-content>section h3.h3,body.case-page .case-content>section h3:not(.h5){font-weight:800;letter-spacing:-.04em;color:var(--case-ink);line-height:1.2;font-size:clamp(1.65rem,3vw,2.75rem);margin-bottom:24px}
+body.case-page .case-content>section p{font-size:16px;line-height:1.85;color:var(--case-muted);max-width:780px}
+body.case-page .case-content>section:first-child p{font-size:18px;line-height:1.8;max-width:780px}
+body.case-page .case-content>section .row.align-items-stretch{align-items:center!important;row-gap:32px}
+body.case-page .case-content>section img.img-fluid{border-radius:14px;box-shadow:0 15px 42px rgba(27,51,36,.09);border:1px solid #e3e9e4;width:100%;height:auto}
+body.case-page .case-content>section .row>div:has(>img.img-fluid){align-self:center}
+body.case-page .case-content>section .list-line li{line-height:1.85;padding:5px 0;color:var(--case-muted)}
+body.case-page .case-content>section .mb-5{margin-bottom:1.4rem!important}
+body.case-page .case-content>section p:empty{display:none}
+body.case-page .case-content>section .row{--bs-gutter-x:3.5rem}
+body.case-page .case-content>section a{color:var(--case-green)}
+body.case-page .footer{border-top:1px solid var(--case-line);background:#fff}
+body.case-page .footer a{font-weight:700;color:var(--case-green)}
+@media(min-width:992px){body.case-page .case-content>section:not(:first-child) .row.align-items-stretch>div.col-md-7{width:58.333333%}body.case-page .case-content>section:not(:first-child) .row.align-items-stretch>div.col-md-5{width:41.666667%}}
+@media(max-width:767px){body.case-page .case-content>section{padding:56px 0}body.case-page .case-content>section:first-child{padding:66px 0}body.case-page .case-content>section .row{--bs-gutter-x:1.5rem}body.case-page .case-content>section:first-child h2{font-size:clamp(2.3rem,9vw,3.5rem)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
