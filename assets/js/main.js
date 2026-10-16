@@ -28,6 +28,22 @@
     }
   }
 
+
+  // Shared expanded navigation for every page.
+  const sharedMenu = document.querySelector('#main-navbar')
+  if (sharedMenu) {
+    const onAbout = window.location.pathname.endsWith('/about.html')
+    sharedMenu.innerHTML = '<div class="container-fluid container-feed px-3 px-lg-4 py-2 py-md-5"><div class="row align-items-start">' +
+      '<div class="col-md-2"><nav aria-label="Main menu"><ul class="custom-menu">' +
+      '<li' + (onAbout ? '' : ' class="active"') + '><a href="index.html">Home</a></li>' +
+      '<li' + (onAbout ? ' class="active"' : '') + '><a href="about.html">About Me</a></li>' +
+      '</ul></nav></div><div class="col-md-6 d-none d-md-block"></div>' +
+      '<div class="col-md-4 menu-contact"><h3 class="h5">Contact</h3>' +
+      '<p><a href="mailto:kimseng.ng@gmail.com">kimseng.ng@gmail.com</a></p>' +
+      '<p><a href="https://www.linkedin.com/in/kim-seng-ng-047b543/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></p>' +
+      '</div></div></div>'
+  }
+
   const burgerMenu = select('.burger')
   on('click', '.burger', function() {
     if (burgerMenu) {
