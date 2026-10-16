@@ -524,3 +524,4 @@ body.case-page .case-footer-nav [align="right"] {
     margin-bottom: 0.5rem;
   }
 }
+\n/* Shared menu refinements */\n.custom-navmenu .menu-contact p{margin:0 0 12px;line-height:1.6}.custom-navmenu .menu-contact a{color:#c8cbc9;text-decoration:none}.custom-navmenu .menu-contact a:hover,.custom-navmenu .menu-contact a:focus{color:#fff;text-decoration:underline}.custom-navmenu .custom-menu li a:focus-visible,.custom-navmenu .menu-contact a:focus-visible{outline:2px solid #e65394;outline-offset:5px}@media(max-width:767.98px){.custom-navmenu .menu-contact{margin-top:26px}.custom-navmenu .container-feed{padding-top:28px!important;padding-bottom:28px!important}}\n
