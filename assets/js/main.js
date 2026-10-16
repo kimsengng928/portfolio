@@ -40,7 +40,7 @@
       '</ul></nav></div><div class="col-md-6 d-none d-md-block"></div>' +
       '<div class="col-md-4 menu-contact"><h3 class="h5">Contact</h3>' +
       '<p><a href="mailto:kimseng.ng@gmail.com">kimseng.ng@gmail.com</a></p>' +
-      '<p><a href="https://www.linkedin.com/in/kim-seng-ng-047b543/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></p>' +
+      '<p><a href="https://www.linkedin.com/in/kim-seng-ng-047b543/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn ↗</a></p>' +
       '</div></div></div>'
   }
 
