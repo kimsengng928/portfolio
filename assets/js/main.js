@@ -61,6 +61,16 @@
   }
   syncPrimaryNav()
   window.addEventListener('hashchange', syncPrimaryNav)
+  document.querySelectorAll('.portfolio-topnav__link').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.portfolio-topnav__link').forEach((item) => {
+        const active = item === link
+        item.classList.toggle('is-current', active)
+        if (active) item.setAttribute('aria-current', 'page')
+        else item.removeAttribute('aria-current')
+      })
+    })
+  })
 
   const oldExpandedMenu = document.querySelector('#main-navbar')
   if (oldExpandedMenu) oldExpandedMenu.remove()
