@@ -567,3 +567,18 @@ body.case-page .case-footer-nav [align="right"] {
 .custom-navbar .portfolio-work-link{display:inline-flex;align-items:center;color:#172b23;font-size:1.125rem;font-weight:700;letter-spacing:-.04em;text-decoration:none;white-space:nowrap}
 .custom-navbar .portfolio-work-link:hover,.custom-navbar .portfolio-work-link:focus{color:#277052;text-decoration:underline;text-underline-offset:5px}
 @media(max-width:575px){.custom-navbar .navbar-brand{margin-right:18px}.custom-navbar .portfolio-work-link{font-size:1rem}}
+
+/* Always-visible portfolio navigation */
+.feed-header .custom-navbar .container-fluid{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:44px}
+.portfolio-topnav,.portfolio-topnav__actions{display:flex;align-items:center;gap:clamp(12px,2.3vw,32px)}
+.portfolio-topnav__link{font-size:.91rem;font-weight:600;color:#47534e;text-decoration:none;white-space:nowrap;padding:9px 0;position:relative}
+.portfolio-topnav__link:hover,.portfolio-topnav__link:focus-visible,.portfolio-topnav__link.is-current{color:#172b23}
+.portfolio-topnav__link.is-current::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:2px;background:#277052;border-radius:2px}
+.portfolio-topnav__actions{gap:16px}
+.portfolio-topnav__linkedin{font-size:1.13rem;color:#344d40;display:inline-flex;align-items:center;text-decoration:none}
+.portfolio-topnav__linkedin:hover{color:#277052}
+.portfolio-topnav__contact{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;border-radius:999px;background:#193f30;color:white!important;font-size:.88rem;font-weight:650;text-decoration:none;white-space:nowrap;transition:background .15s ease,transform .15s ease}
+.portfolio-topnav__contact:hover{background:#276448;transform:translateY(-1px)}
+.feed-header .burger{display:none!important}
+@media(max-width:575px){.feed-header .custom-navbar .container-fluid{gap:9px}.portfolio-topnav{gap:12px}.portfolio-topnav__link{font-size:.78rem}.portfolio-topnav__actions{gap:10px}.portfolio-topnav__contact{font-size:.78rem;padding:8px 10px}.portfolio-topnav__linkedin{font-size:1rem}}
+@media(max-width:375px){.portfolio-topnav{gap:9px}.portfolio-topnav__link{font-size:.73rem}.portfolio-topnav__linkedin{display:none}.portfolio-topnav__contact{padding:7px 9px}}
