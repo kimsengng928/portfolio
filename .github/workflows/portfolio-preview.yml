@@ -1,0 +1,44 @@
+name: Portfolio redesign preview
+
+# Builds a complete static preview on each redesign push.
+# Publishing to GitHub Pages is deliberately NOT automatic:
+# a Pages deployment can replace the existing production site.
+on:
+  push:
+    branches:
+      - redesign/consistent-case-studies
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    name: Package redesign preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out redesign branch
+        uses: actions/checkout@v4
+
+      - name: Prepare static website
+        run: |
+          mkdir -p preview-site
+          cp -a . preview-site/
+          rm -rf preview-site/.git preview-site/.github
+          test -f preview-site/index.html
+          test -f preview-site/filter_bar.html
+          test -f preview-site/assets/css/case-study-unified.css
+          touch preview-site/.nojekyll
+
+      - name: Upload downloadable preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-redesign-preview
+          path: preview-site/
+          retention-days: 30
+
+      - name: Preview instructions
+        run: |
+          echo '## Redesign preview ready' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Download the **portfolio-redesign-preview** artifact from this workflow run and open index.html locally.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'This workflow intentionally does not publish to GitHub Pages, to avoid replacing the existing live site.' >> "$GITHUB_STEP_SUMMARY"

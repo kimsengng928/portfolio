@@ -28,6 +28,53 @@
     }
   }
 
+
+  // Shared, always-visible navigation; no hidden menu required.
+  const onAboutPage = window.location.pathname.endsWith('/about.html')
+  const onHomePage = /(?:\/|\/index\.html)$/.test(window.location.pathname)
+  const onWorkPage = !onAboutPage && !onHomePage
+  document.querySelectorAll('.custom-navbar .container-fluid').forEach((container) => {
+    container.innerHTML = '<nav class="portfolio-topnav" aria-label="Primary navigation">' +
+      '<a href="index.html" class="portfolio-topnav__link' + (onHomePage && !window.location.hash ? ' is-current' : '') + '">Home</a>' +
+      '<a href="index.html#selected-projects" class="portfolio-topnav__link' + (onWorkPage || (onHomePage && window.location.hash === '#selected-projects') ? ' is-current' : '') + '">The Work</a>' +
+      '<a href="about.html" class="portfolio-topnav__link' + (onAboutPage ? ' is-current' : '') + '">About Me</a>' +
+      '</nav>' +
+      '<div class="portfolio-topnav__actions">' +
+      '<a class="portfolio-topnav__linkedin" href="https://www.linkedin.com/in/kim-seng-ng-047b543/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bi bi-linkedin" aria-hidden="true"></i></a>' +
+      '<a class="portfolio-topnav__contact" href="mailto:kimseng.ng@gmail.com">Contact <span aria-hidden="true">↗</span></a>' +
+      '</div>'
+  })
+  // Keep the underline in sync when the user navigates to or away from The Work anchor.
+  const syncPrimaryNav = () => {
+    const onProjects = window.location.hash === '#selected-projects'
+    document.querySelectorAll('.portfolio-topnav__link').forEach((link) => {
+      const destination = link.getAttribute('href')
+      const active = destination === 'index.html#selected-projects'
+        ? (onWorkPage || (onHomePage && onProjects))
+        : destination === 'index.html'
+          ? (onHomePage && !onProjects)
+          : onAboutPage
+      link.classList.toggle('is-current', active)
+      if (active) link.setAttribute('aria-current', 'page')
+      else link.removeAttribute('aria-current')
+    })
+  }
+  syncPrimaryNav()
+  window.addEventListener('hashchange', syncPrimaryNav)
+  document.querySelectorAll('.portfolio-topnav__link').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.portfolio-topnav__link').forEach((item) => {
+        const active = item === link
+        item.classList.toggle('is-current', active)
+        if (active) item.setAttribute('aria-current', 'page')
+        else item.removeAttribute('aria-current')
+      })
+    })
+  })
+
+  const oldExpandedMenu = document.querySelector('#main-navbar')
+  if (oldExpandedMenu) oldExpandedMenu.remove()
+
   const burgerMenu = select('.burger')
   on('click', '.burger', function() {
     if (burgerMenu) {

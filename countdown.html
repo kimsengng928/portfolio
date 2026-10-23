@@ -35,6 +35,36 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <link href="assets/css/case-study-unified.css" rel="stylesheet">
+<style>
+.video-link-password-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.video-password-inline{display:inline-flex;align-items:center;gap:5px;color:#455b50;white-space:nowrap;font-size:.875rem}
+.video-password-inline code{color:#9a245a;background:#f8edf2;padding:5px 7px;border-radius:6px}
+.video-password-short{display:none}
+@media(max-width:575.98px){
+.video-link-password-row{flex-wrap:nowrap;gap:6px}
+.video-link-password-row .video-link-button{padding:11px 10px!important;gap:5px!important;font-size:.78rem;white-space:nowrap}
+.video-password-inline{gap:2px;font-size:.72rem}
+.video-password-inline code{padding:3px 4px;font-size:.72rem}
+.video-password-inline button{padding:4px!important}
+.video-password-long{display:none}
+.video-password-short{display:inline}
+}
+/* Keep all three links identical; prevent their text from wrapping. */
+.countdown-video-button{
+  width:260px!important;min-width:260px!important;max-width:260px!important;
+  box-sizing:border-box;justify-content:center;flex-shrink:0;
+  white-space:nowrap!important;flex-wrap:nowrap!important;
+}
+.countdown-video-button > span,.countdown-video-button > i{white-space:nowrap!important;flex-shrink:0}
+@media(max-width:575.98px){
+  .countdown-video-button{
+    width:112px!important;min-width:112px!important;max-width:112px!important;
+    padding:11px 8px!important;font-size:.78rem!important;gap:5px!important;
+  }
+  .video-password-inline{font-size:.72rem}
+}
+</style>
 </head>
 
 <body class="case-page">
@@ -94,15 +124,14 @@
 		<div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-7">
-				<video width="100%" height="100%" controls class="img-fluid" poster="assets/img/countdown.jpg">
-  				<source src="assets/img/video1.mp4" type="video/mp4">
-				</video>
-				<video width="100%" height="100%" controls class="img-fluid">
-  				<source src="assets/img/video2.mp4" type="video/mp4">
-				</video>
-				<video width="100%" height="100%" controls class="img-fluid">
-  				<source src="assets/img/video3.mp4" type="video/mp4">
-				</video>
+              <figure class="mb-3">
+                <img src="assets/img/countdown.jpg" alt="Countdown Induction Programme video cover" class="img-fluid w-100" style="border-radius:12px" loading="lazy">
+              </figure>
+              <div class="d-flex flex-column align-items-start gap-3 mb-4" aria-label="Countdown induction videos">
+                <div class="video-link-password-row"><a href="https://vimeo.com/285794341" target="_blank" rel="noopener noreferrer" class="video-link-button countdown-video-button rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i><span class="d-none d-sm-inline">Watch video 1 on Vimeo</span><span class="d-inline d-sm-none">Video 1</span><span aria-hidden="true">↗</span></a><span class="video-password-inline"><strong><span class="video-password-long">Video password:</span><span class="video-password-short">Password:</span></strong><code>letmein</code><button type="button" class="rounded portfolio-video-copy" aria-label="Copy video password" title="Copy password" data-password="letmein" style="border:0;background:transparent;color:#1d5942;cursor:pointer;padding:6px 8px"><i class="bi bi-copy" aria-hidden="true"></i></button></span></div>
+                <a href="https://vimeo.com/285794738" target="_blank" rel="noopener noreferrer" class="video-link-button countdown-video-button rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i><span class="d-none d-sm-inline">Watch video 2 on Vimeo</span><span class="d-inline d-sm-none">Video 2</span><span aria-hidden="true">↗</span></a>
+                <a href="https://vimeo.com/285794979" target="_blank" rel="noopener noreferrer" class="video-link-button countdown-video-button rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i><span class="d-none d-sm-inline">Watch video 3 on Vimeo</span><span class="d-inline d-sm-none">Video 3</span><span aria-hidden="true">↗</span></a>
+              </div>
             </div>
             <div class="col-md-5 ml-auto">
               <div>
@@ -172,6 +201,20 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    document.querySelectorAll('.portfolio-video-copy').forEach((button) => {
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(button.dataset.password);
+          button.title = 'Copied!';
+          button.setAttribute('aria-label', 'Password copied');
+          button.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i>';
+          setTimeout(() => { button.title = 'Copy password'; button.setAttribute('aria-label', 'Copy video password'); button.innerHTML = '<i class="bi bi-copy" aria-hidden="true"></i>'; }, 1800);
+        } catch (error) { button.title = 'Could not copy password'; }
+      });
+    });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
