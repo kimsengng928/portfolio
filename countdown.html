@@ -95,15 +95,30 @@
 		<div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-7">
-				<video width="100%" height="100%" controls class="img-fluid" poster="assets/img/countdown.jpg">
-  				<source src="assets/img/video1.mp4" type="video/mp4">
-				</video>
-				<video width="100%" height="100%" controls class="img-fluid">
-  				<source src="assets/img/video2.mp4" type="video/mp4">
-				</video>
-				<video width="100%" height="100%" controls class="img-fluid">
-  				<source src="assets/img/video3.mp4" type="video/mp4">
-				</video>
+              <div class="d-flex flex-column gap-4 mb-4" aria-label="Countdown induction videos">
+                <article>
+                  <a href="https://vimeo.com/285794341" target="_blank" rel="noopener noreferrer" aria-label="Watch Countdown induction video 1 on Vimeo" class="d-block position-relative" style="border-radius:12px;overflow:hidden;background:#e9efeb">
+                    <img src="https://vumbnail.com/285794341.jpg" onerror="this.onerror=null;this.src='assets/img/countdown.jpg'" alt="Thumbnail for Countdown induction video 1" class="img-fluid w-100" style="aspect-ratio:16/9;object-fit:cover" loading="lazy">
+                    <span class="position-absolute top-50 start-50 translate-middle d-inline-flex align-items-center justify-content-center rounded-circle" style="width:64px;height:64px;background:rgba(20,25,30,.82);color:white;font-size:28px" aria-hidden="true"><i class="bi bi-play-fill"></i></span>
+                  </a>
+                  <div class="mt-3"><a href="https://vimeo.com/285794341" target="_blank" rel="noopener noreferrer" class="rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i>Watch video 1 on Vimeo <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article>
+                  <a href="https://vimeo.com/285794738" target="_blank" rel="noopener noreferrer" aria-label="Watch Countdown induction video 2 on Vimeo" class="d-block position-relative" style="border-radius:12px;overflow:hidden;background:#e9efeb">
+                    <img src="https://vumbnail.com/285794738.jpg" onerror="this.onerror=null;this.src='assets/img/countdown.jpg'" alt="Thumbnail for Countdown induction video 2" class="img-fluid w-100" style="aspect-ratio:16/9;object-fit:cover" loading="lazy">
+                    <span class="position-absolute top-50 start-50 translate-middle d-inline-flex align-items-center justify-content-center rounded-circle" style="width:64px;height:64px;background:rgba(20,25,30,.82);color:white;font-size:28px" aria-hidden="true"><i class="bi bi-play-fill"></i></span>
+                  </a>
+                  <div class="mt-3"><a href="https://vimeo.com/285794738" target="_blank" rel="noopener noreferrer" class="rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i>Watch video 2 on Vimeo <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article>
+                  <a href="https://vimeo.com/285794979" target="_blank" rel="noopener noreferrer" aria-label="Watch Countdown induction video 3 on Vimeo" class="d-block position-relative" style="border-radius:12px;overflow:hidden;background:#e9efeb">
+                    <img src="https://vumbnail.com/285794979.jpg" onerror="this.onerror=null;this.src='assets/img/countdown.jpg'" alt="Thumbnail for Countdown induction video 3" class="img-fluid w-100" style="aspect-ratio:16/9;object-fit:cover" loading="lazy">
+                    <span class="position-absolute top-50 start-50 translate-middle d-inline-flex align-items-center justify-content-center rounded-circle" style="width:64px;height:64px;background:rgba(20,25,30,.82);color:white;font-size:28px" aria-hidden="true"><i class="bi bi-play-fill"></i></span>
+                  </a>
+                  <div class="mt-3"><a href="https://vimeo.com/285794979" target="_blank" rel="noopener noreferrer" class="rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i>Watch video 3 on Vimeo <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <div class="d-flex flex-wrap align-items-center gap-2 mt-3" style="color:#455b50"><strong>Password for all three videos:</strong> <code style="color:#9a245a;background:#f8edf2;padding:5px 9px;border-radius:6px">letmein</code> <button type="button" class="rounded portfolio-video-copy" aria-label="Copy video password" title="Copy password" data-password="letmein" style="border:0;background:transparent;color:#1d5942;cursor:pointer;padding:6px 8px;vertical-align:middle"><i class="bi bi-copy" aria-hidden="true"></i></button></div>
+              </div>
             </div>
             <div class="col-md-5 ml-auto">
               <div>
@@ -173,6 +188,20 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    document.querySelectorAll('.portfolio-video-copy').forEach((button) => {
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(button.dataset.password);
+          button.title = 'Copied!';
+          button.setAttribute('aria-label', 'Password copied');
+          button.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i>';
+          setTimeout(() => { button.title = 'Copy password'; button.setAttribute('aria-label', 'Copy video password'); button.innerHTML = '<i class="bi bi-copy" aria-hidden="true"></i>'; }, 1800);
+        } catch (error) { button.title = 'Could not copy password'; }
+      });
+    });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
