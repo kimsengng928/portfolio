@@ -36,6 +36,21 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 <link href="assets/css/case-study-unified.css" rel="stylesheet">
+<style>
+.video-link-password-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.video-password-inline{display:inline-flex;align-items:center;gap:5px;color:#455b50;white-space:nowrap;font-size:.875rem}
+.video-password-inline code{color:#9a245a;background:#f8edf2;padding:5px 7px;border-radius:6px}
+.video-password-short{display:none}
+@media(max-width:575.98px){
+.video-link-password-row{flex-wrap:nowrap;gap:6px}
+.video-link-password-row .video-link-button{padding:11px 10px!important;gap:5px!important;font-size:.78rem;white-space:nowrap}
+.video-password-inline{gap:2px;font-size:.72rem}
+.video-password-inline code{padding:3px 4px;font-size:.72rem}
+.video-password-inline button{padding:4px!important}
+.video-password-long{display:none}
+.video-password-short{display:inline}
+}
+</style>
 </head>
 
 <body class="case-page">
@@ -98,10 +113,7 @@
               <figure class="mb-3">
                 <img src="assets/img/tereo.png" alt="Cover artwork for Massey University's Toro Mai and Te Reo promotional video" class="img-fluid w-100" style="border-radius:12px" loading="lazy">
               </figure>
-              <div class="mb-4 d-flex flex-wrap align-items-center gap-3">
-                <a href="https://vimeo.com/283235511" target="_blank" rel="noopener noreferrer" class="rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i>Watch video on Vimeo <span aria-hidden="true">↗</span></a>
-                <p class="mb-0" style="color:#455b50"><strong>Video password:</strong> <code style="color:#9a245a;background:#f8edf2;padding:5px 9px;border-radius:6px">letmein</code> <button type="button" aria-label="Copy video password" title="Copy password" onclick="navigator.clipboard.writeText('letmein').then(() => { this.setAttribute('aria-label', 'Password copied'); this.setAttribute('title', 'Copied!'); this.innerHTML = '<i class=&quot;bi bi-check2&quot; aria-hidden=&quot;true&quot;></i>'; setTimeout(() => { this.setAttribute('aria-label', 'Copy video password'); this.setAttribute('title', 'Copy password'); this.innerHTML = '<i class=&quot;bi bi-clipboard&quot; aria-hidden=&quot;true&quot;></i>'; }, 1800); }).catch(() => { this.setAttribute('title', 'Could not copy password'); })" style="border:0;background:transparent;color:#1d5942;cursor:pointer;padding:6px 8px;vertical-align:middle" class="rounded" ><i class="bi bi-copy" aria-hidden="true"></i></button></p>
-              </div>
+              <div class="video-link-password-row mb-4"><a href="https://vimeo.com/283235511" target="_blank" rel="noopener noreferrer" class="video-link-button rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2 text-decoration-none" style="background:#20252a;color:#ffffff!important;font-weight:700;line-height:1.3"><i class="bi bi-play-circle" aria-hidden="true"></i><span class="d-none d-sm-inline">Watch video on Vimeo</span><span class="d-inline d-sm-none">Watch video</span><span aria-hidden="true">↗</span></a><span class="video-password-inline"><strong><span class="video-password-long">Video password:</span><span class="video-password-short">PW:</span></strong><code>letmein</code><button type="button" class="rounded portfolio-video-copy" aria-label="Copy video password" title="Copy password" data-password="letmein" style="border:0;background:transparent;color:#1d5942;cursor:pointer;padding:6px 8px"><i class="bi bi-copy" aria-hidden="true"></i></button></span></div>
             </div>
             <div class="col-md-5 ml-auto">
               <div>
@@ -174,6 +186,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+<script>document.querySelectorAll('.portfolio-video-copy').forEach(button=>button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(button.dataset.password);button.title='Copied!';button.innerHTML='<i class="bi bi-check2" aria-hidden="true"></i>';setTimeout(()=>{button.title='Copy password';button.innerHTML='<i class="bi bi-copy" aria-hidden="true"></i>'},1800)}catch(e){button.title='Could not copy password'}}));</script>
 </body>
 
 </html>
