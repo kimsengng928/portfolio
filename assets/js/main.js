@@ -29,34 +29,23 @@
   }
 
 
-  // Consistent top navigation across the homepage, About page, and case studies.
-  document.querySelectorAll('.navbar-brand').forEach((brand) => {
-    brand.textContent = 'Home'
-    brand.setAttribute('href', 'index.html')
-    brand.setAttribute('aria-label', 'Home — portfolio introduction')
-    if (!brand.parentElement.querySelector('.portfolio-work-link')) {
-      const workLink = document.createElement('a')
-      workLink.href = 'index.html#selected-projects'
-      workLink.className = 'portfolio-work-link'
-      workLink.textContent = 'The Work'
-      workLink.setAttribute('aria-label', 'The Work — selected projects')
-      brand.insertAdjacentElement('afterend', workLink)
-    }
+  // Shared, always-visible navigation; no hidden menu required.
+  const onAboutPage = window.location.pathname.endsWith('/about.html')
+  const onHomePage = /(?:\/|\/index\.html)$/.test(window.location.pathname)
+  const onWorkPage = !onAboutPage && !onHomePage
+  document.querySelectorAll('.custom-navbar .container-fluid').forEach((container) => {
+    container.innerHTML = '<nav class="portfolio-topnav" aria-label="Primary navigation">' +
+      '<a href="index.html" class="portfolio-topnav__link' + (onHomePage && !window.location.hash ? ' is-current' : '') + '">Home</a>' +
+      '<a href="index.html#selected-projects" class="portfolio-topnav__link' + (onWorkPage || (onHomePage && window.location.hash === '#selected-projects') ? ' is-current' : '') + '">The Work</a>' +
+      '<a href="about.html" class="portfolio-topnav__link' + (onAboutPage ? ' is-current' : '') + '">About Me</a>' +
+      '</nav>' +
+      '<div class="portfolio-topnav__actions">' +
+      '<a class="portfolio-topnav__linkedin" href="https://www.linkedin.com/in/kim-seng-ng-047b543/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><i class="bi bi-linkedin" aria-hidden="true"></i></a>' +
+      '<a class="portfolio-topnav__contact" href="mailto:kimseng.ng@gmail.com">Contact <span aria-hidden="true">↗</span></a>' +
+      '</div>'
   })
-
-  const sharedMenu = document.querySelector('#main-navbar')
-  if (sharedMenu) {
-    const onAbout = window.location.pathname.endsWith('/about.html')
-    sharedMenu.innerHTML = '<div class="container-fluid container-feed px-3 px-lg-4 py-2 py-md-5"><div class="row align-items-start">' +
-      '<div class="col-md-2"><nav aria-label="Main menu"><ul class="custom-menu">' +
-      '<li' + (onAbout ? '' : ' class="active"') + '><a href="index.html">Home</a></li>' +
-      '<li' + (onAbout ? ' class="active"' : '') + '><a href="about.html">About Me</a></li>' +
-      '</ul></nav></div><div class="col-md-6 d-none d-md-block"></div>' +
-      '<div class="col-md-4 menu-contact"><h3 class="h5">Contact</h3>' +
-      '<p><a href="mailto:kimseng.ng@gmail.com">kimseng.ng@gmail.com</a></p>' +
-      '<p><a href="https://www.linkedin.com/in/kim-seng-ng-047b543/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn ↗</a></p>' +
-      '</div></div></div>'
-  }
+  const oldExpandedMenu = document.querySelector('#main-navbar')
+  if (oldExpandedMenu) oldExpandedMenu.remove()
 
   const burgerMenu = select('.burger')
   on('click', '.burger', function() {
