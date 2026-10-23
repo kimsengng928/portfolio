@@ -30,6 +30,11 @@
 
 
   // Shared expanded navigation for every page.
+  // The brand returns visitors to the project gallery; Home in the menu still opens the page top.
+  document.querySelectorAll('.navbar-brand').forEach((brand) => {
+    if (brand.textContent.trim() === 'Kimseng Ng') brand.setAttribute('href', 'index.html#selected-projects')
+  })
+
   const sharedMenu = document.querySelector('#main-navbar')
   if (sharedMenu) {
     const onAbout = window.location.pathname.endsWith('/about.html')
