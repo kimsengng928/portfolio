@@ -29,10 +29,19 @@
   }
 
 
-  // Shared expanded navigation for every page.
-  // The brand returns visitors to the project gallery; Home in the menu still opens the page top.
+  // Consistent top navigation across the homepage, About page, and case studies.
   document.querySelectorAll('.navbar-brand').forEach((brand) => {
-    if (brand.classList.contains('navbar-brand')) { brand.textContent = 'The Work'; brand.setAttribute('href', 'index.html#selected-projects'); brand.setAttribute('aria-label', 'The Work — selected projects') }
+    brand.textContent = 'Home'
+    brand.setAttribute('href', 'index.html')
+    brand.setAttribute('aria-label', 'Home — portfolio introduction')
+    if (!brand.parentElement.querySelector('.portfolio-work-link')) {
+      const workLink = document.createElement('a')
+      workLink.href = 'index.html#selected-projects'
+      workLink.className = 'portfolio-work-link'
+      workLink.textContent = 'The Work'
+      workLink.setAttribute('aria-label', 'The Work — selected projects')
+      brand.insertAdjacentElement('afterend', workLink)
+    }
   })
 
   const sharedMenu = document.querySelector('#main-navbar')
