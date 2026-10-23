@@ -44,6 +44,24 @@
       '<a class="portfolio-topnav__contact" href="mailto:kimseng.ng@gmail.com">Contact <span aria-hidden="true">↗</span></a>' +
       '</div>'
   })
+  // Keep the underline in sync when the user navigates to or away from The Work anchor.
+  const syncPrimaryNav = () => {
+    const onProjects = window.location.hash === '#selected-projects'
+    document.querySelectorAll('.portfolio-topnav__link').forEach((link) => {
+      const destination = link.getAttribute('href')
+      const active = destination === 'index.html#selected-projects'
+        ? (onWorkPage || (onHomePage && onProjects))
+        : destination === 'index.html'
+          ? (onHomePage && !onProjects)
+          : onAboutPage
+      link.classList.toggle('is-current', active)
+      if (active) link.setAttribute('aria-current', 'page')
+      else link.removeAttribute('aria-current')
+    })
+  }
+  syncPrimaryNav()
+  window.addEventListener('hashchange', syncPrimaryNav)
+
   const oldExpandedMenu = document.querySelector('#main-navbar')
   if (oldExpandedMenu) oldExpandedMenu.remove()
 
