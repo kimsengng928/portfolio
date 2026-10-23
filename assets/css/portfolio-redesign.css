@@ -561,3 +561,9 @@ body.case-page .case-footer-nav [align="right"] {
 @media(max-width:850px){.feed-hero__layout{grid-template-columns:1fr;gap:32px;padding-bottom:65px}.feed-hero__aside{max-width:500px}.feed-hero__work-header{align-items:start;flex-direction:column;gap:10px}}
 @media(max-width:575px){.feed-page .feed-hero--editorial{padding-top:45px}.feed-page .feed-hero__title{font-size:clamp(2.8rem,12vw,4.1rem)}.feed-hero__aside{padding-left:20px}.feed-hero__actions{gap:18px}.feed-hero__work-header{padding-top:25px}.feed-page .feed-filters .filter-btn{padding:10px 14px}}
 @media(prefers-reduced-motion:reduce){.feed-hero__primary{transition:none}}
+
+/* Home and The Work — shared primary navigation */
+.custom-navbar .navbar-brand{display:inline-flex;align-items:center;margin-right:clamp(18px,2.5vw,36px)}
+.custom-navbar .portfolio-work-link{display:inline-flex;align-items:center;color:#172b23;font-size:1.125rem;font-weight:700;letter-spacing:-.04em;text-decoration:none;white-space:nowrap}
+.custom-navbar .portfolio-work-link:hover,.custom-navbar .portfolio-work-link:focus{color:#277052;text-decoration:underline;text-underline-offset:5px}
+@media(max-width:575px){.custom-navbar .navbar-brand{margin-right:18px}.custom-navbar .portfolio-work-link{font-size:1rem}}
